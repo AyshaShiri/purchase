@@ -16,3 +16,5 @@ con=sqlite3.connect(r"C:\Users\DELL\Downloads\database.db")
 df=pd.read_sql_query("SELECT * FROM purchases",con)
 df.set_index('index',inplace=True)
 print(df)
+
+khuh
