@@ -6,8 +6,7 @@ b=movies_df.tail(2)
 print(b)
 c=movies_df.info()
 print(c)
-d=movies_df.columns
-print(d)
-e=movies_df.rename(columns={"Runtime(Minutes)":"Runtime","Revenue (Millions)":"Revenue_Millions"},inplace=True)
-print(movies_df.columns)
+movies_df.columns
+movies_df.rename (columns="Runtime(Minutes)":"Runtime","Revenue (Millions)":)
 
+print("its working")
