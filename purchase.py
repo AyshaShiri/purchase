@@ -17,4 +17,4 @@ df=pd.read_sql_query("SELECT * FROM purchases",con)
 df.set_index('index',inplace=True)
 print(df)
 
-khuh
+bhghgh
