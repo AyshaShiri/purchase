@@ -1,5 +1,35 @@
 import pandas as pd 
-movies_df=pd.read_csv(r"C:\\Users\\DELL\\Downloads\\IMDB-Movie-Data (1).csv",index_col="Title")
-movies_df.rename(columns={"Runtime_(Minutes)":"Runtime","Revenue_(Millions)":"Revenue_Millions"},inplace=True)
-
+movies_df=pd.read_csv(r"C:\\Users\\DELL\\Downloads\\IMDB-Movie-Data.csv",index_col="Title")
+a=movies_df.head()
+print(a)
+b=movies_df.tail(2)
+print(b)
+c=movies_df.info()
+print(c)
+print(movies_df.shape)
+dup=movies_df.add(movies_df)
+print(dup.shape)
 print(movies_df.columns)
+movies_df.rename(columns={"Runtime (Minutes)":"Runtime","Revenue (Millions)":"Revenue_Millions"},inplace=True)
+print(movies_df.columns)
+movies_df.columns=[col.lower() for col in movies_df]
+print(movies_df.columns)
+print(movies_df.isnull())
+print(movies_df.isnull().sum())
+#movies_df.dropna(axis=1,inplace=True)
+#print(movies_df.isnull().sum())
+revenue=movies_df['revenue_millions']
+print(revenue.head())
+r_mean=revenue.mean()
+print(r_mean)
+r_new=revenue.fillna(r_mean,inplace=True)
+print(movies_df.isnull().sum())
+print(movies_df.describe())
+print(movies_df['revenue_millions'].describe())
+print(movies_df['genre'].value_counts())
+print(movies_df['genre'].value_counts().head(10))
+#print(movies_df.dtypes())
+genre_col=movies_df['genre']
+print(type(genre_col))
+genre_col2=movies_df[['genre']]
+print(type(genre_col))
